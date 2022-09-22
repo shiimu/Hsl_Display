@@ -3,9 +3,6 @@ Hsl_Display
 ===========
 
 
-.. image:: https://img.shields.io/pypi/v/hsl_display.svg
-        :target: https://pypi.python.org/pypi/hsl_display
-
 .. image:: https://img.shields.io/travis/shiimu/hsl_display.svg
         :target: https://travis-ci.com/shiimu/hsl_display
 
