@@ -11,10 +11,9 @@ Hsl_Display
         :alt: Documentation Status
 
 
-
-
-    
-     rewrite of https://github.com/shiimu/Bustimes
+     
+Rewrite of https://github.com/shiimu/Bustimes
+-------
 
 
 
