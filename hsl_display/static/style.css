@@ -1,0 +1,46 @@
+body{
+    background-color:#007fc6;
+}
+
+p2 {
+    color: #007fc6;
+    background-color: white;
+    padding: 1px;
+    font-family: Helvetica;
+    font-size: 80px;
+    font-weight: bolder;
+    float: left;
+    margin-top: 70px;
+    border-radius: 25px;
+}
+
+img{
+    content: url(../static/logo.png);
+    width: 40%;
+    height: 40%;
+}
+table {
+    float: left;
+    color: white;
+    text-align: left;
+    padding: 1px;
+}
+
+th,td {
+    border-collapse: 1px dotted white;
+    border-bottom-style: dotted;
+    border-bottom-color:  white;
+    color: white;
+    text-align: left;
+    padding: 3px;
+    font-family: Helvetica;
+    font-size: 30px;
+}
+table.c {
+    table-layout: auto;
+    width: auto;
+}
+
+
+
+
