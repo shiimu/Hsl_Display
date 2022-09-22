@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8" http-equiv="refresh" content="30">                
-
-    <link rel="stylesheet" href="{{ url_for('static', filename= 'style.css') }}">
-    <title>HSL Bus Times Display</title>
-</head>
-<body>
-</body>
+    <head>
+        <meta charset="UTF-8" http-equiv="refresh" content="30">
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'style.css') }}">
+        <title>HSL Bus Times Display</title>
+    </head>
+    <body onLoad="timeRefresh(2000);">
+        <script>
+            function timeRefresh(time) {
+                            setTimeout("location.reload(true);", time);
+                        }
+        </script>
+        <h3>This page will auto refresh after 2 seconds.</h3>
+    </body>
 </html>
