@@ -13,7 +13,9 @@ Hsl_Display
 
 
 
-rewrite of https://github.com/shiimu/Bustimes
+    
+     rewrite of https://github.com/shiimu/Bustimes
+
 
 
 * Free software: BSD license
@@ -24,6 +26,12 @@ Features
 --------
 
 * TODO
+    
+    * Simple installation
+    * Set up your own API secrets
+    * Configure custom bus stops
+    * Weather API
+    * Low maintenance.
 
 Credits
 -------
