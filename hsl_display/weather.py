@@ -1,8 +1,9 @@
-import time
 import json
-import os
+import requests
 
-
+secret = {
+	"owm":"fcc250fd2a7a605c8269de49d1dc6dda"
+	}
 
 def queryWeatherApi(lat, lon):
 	'''
@@ -24,13 +25,11 @@ def queryWeatherApi(lat, lon):
 	response = requests.get(url, headers=headers, data = json.dumps(payload))
 	global dumped_weather
 	dumped_weather = response.json()
-	print(dumped_weather)
-	
+	sortWeather()
+
 	
 def sortWeather():
 	global last_temp
-	from query_api import queryWeatherApi
-	queryWeatherApi('60','25')
 	last_weather = dumped_weather
 	last_main = last_weather['main']
 	last_temp = last_main['temp']

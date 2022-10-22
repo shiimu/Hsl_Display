@@ -1,46 +1,48 @@
 body{
-    background-color:#007fc6;
+	background-color:	#007fc6;
 }
 
-p2 {
-    color: #007fc6;
-    background-color: white;
-    padding: 1px;
-    font-family: Helvetica;
-    font-size: 80px;
-    font-weight: bolder;
-    float: left;
-    margin-top: 70px;
-    border-radius: 25px;
-}
+.float-left{
+	color:	white;
+	float:	left;
+	width:	300px; // or 33% for equal width independent of parent width
+	padding:	1px;
+	font-family:	Helvetica;
+	font-size:	80px;
+	font-weight:	bold;
+	margin-top: 80px;
 
+}
 img{
-    content: url(../static/logo.png);
-    width: 40%;
-    height: 40%;
-}
-table {
-    float: left;
-    color: white;
-    text-align: left;
-    padding: 1px;
+	content:	url(../static/logo.png);
+	float:	left;
+	width:	40%;
+	height:	40%;
 }
 
-th,td {
-    border-collapse: 1px dotted white;
-    border-bottom-style: dotted;
-    border-bottom-color:  white;
-    color: white;
-    text-align: left;
-    padding: 3px;
-    font-family: Helvetica;
-    font-size: 30px;
+th{
+	border-collapse: 1px solid white;
+	border-bottom-style: solid;
+	border-bottom-color:  white;
+	color: white;
+	padding: 3px;
+	text-align: center;
+	font-family: Helvetica;
+	font-size: 70px;
+}
+td{
+	border-collapse: 1px solid white;
+	border-bottom-style: solid;
+	border-bottom-color:  white;
+	color: white;
+	padding: 3px;
+	text-align: center;
+	font-family: Helvetica;
+	font-size: 70px;
+	font-weight: bold;
 }
 table.c {
-    table-layout: auto;
-    width: auto;
+	table-layout: auto;
+	width: auto;  
 }
-
-
-
 

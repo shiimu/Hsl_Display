@@ -5,12 +5,31 @@
         <link rel="stylesheet" href="{{ url_for('static', filename= 'style.css') }}">
         <title>HSL Bus Times Display</title>
     </head>
-    <body onLoad="timeRefresh(2000);">
+   <div>
+		<img>
+		<div align = "center" class = "float-left">{{ weathern }}</div>
+    <div align = "center" class = "float-left">{{ timen }}</div>
+		</div>
+
+		<body onLoad="timeRefresh(20000);">
         <script>
             function timeRefresh(time) {
                             setTimeout("location.reload(true);", time);
                         }
         </script>
-        <h3>This page will auto refresh after 2 seconds.</h3>
-    </body>
+		<div align = "center">
+
+		<table class="c">
+			<tr>
+				<th>LINJA</th>
+				<th>MÄÄRÄNPÄÄ</th>
+				<th>AIKA</th>
+			</tr>
+			<tr>
+				<td>{{ bus }}65</td>
+				<td>{{ endpoint }}Olympiaterminaali</td>
+				<td>{{ timeleft }}2</td>
+			</tr>
+		</div>
+		</body>
 </html>
