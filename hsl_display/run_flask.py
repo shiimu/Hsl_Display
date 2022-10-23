@@ -20,15 +20,15 @@ queryWeatherApi(lat, lon)
 
 @app.route("/")
 def start_serv():
-	timeNow = time.strftime('%H %M', time.localtime(time.time()))
+    timeNow = time.strftime('%H %M', time.localtime(time.time()))
 
-	from weather import temp_in_int
-	weatherNow = str(temp_in_int) + "C" + degree_sign
-	
-	from bus import  bus_number, bus_name, bus_time_left, refresh_data
-	refresh_data()
-	
-	return render_template('index.html', timen = timeNow, weathern = weatherNow, busName = bus_name(0), busNumber = bus_number(0), normLeft = bus_time_left(0))
+    from weather import temp_in_int
+    weatherNow = str(temp_in_int) + "C" + degree_sign
+
+    from bus import  bus_number, bus_name, bus_time_left, refresh_data
+    refresh_data()
+
+    return render_template('index.html', timen = timeNow, weathern = weatherNow, busName = bus_name(0), busNumber = bus_number(0), normLeft = bus_time_left(0))
 
 if __name__ == "__main__":
-	app.run(debug=True)
+    app.run(debug=True)

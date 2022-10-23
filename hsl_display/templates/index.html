@@ -1,35 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" http-equiv="refresh" content="30">
-        <link rel="stylesheet" href="{{ url_for('static', filename= 'style.css') }}">
-        <title>HSL Bus Times Display</title>
-    </head>
-   <div>
-		<img>
-		<div align = "center" class = "float-left">{{ weathern }}</div>
+  <head>
+    <meta charset="UTF-8" http-equiv="refresh" content="30">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'style.css') }}">
+    <title>HSL Bus Times Display</title>
+  </head>
+  <div>
+    <img>
+    <div align = "center" class = "float-left">{{ weathern }}</div>
     <div align = "center" class = "float-left">{{ timen }}</div>
-		</div>
+  </div>
 
-		<body onLoad="timeRefresh(20000);">
-        <script>
-            function timeRefresh(time) {
-                            setTimeout("location.reload(true);", time);
-                        }
-        </script>
-		<div align = "center">
+  <body onLoad="timeRefresh(20000);">
+    <script>
+      function timeRefresh(time) {
+              setTimeout("location.reload(true);", time);
+            }
+    </script>
+    <div align = "center">
 
-		<table class="c">
-			<tr>
-				<th>LINJA</th>
-				<th>MÄÄRÄNPÄÄ</th>
-				<th>AIKA</th>
-			</tr>
-			<tr>
-				<td>{{ busNumber }}</td>
-				<td>{{ busName }}</td>
-				<td>{{ normLeft }}</td>
-			</tr>
-		</div>
-		</body>
+      <table class="c">
+        <tr>
+          <th>LINJA</th>
+          <th>MÄÄRÄNPÄÄ</th>
+          <th>AIKA</th>
+        </tr>
+        <tr>
+          <td>{{ busNumber }}</td>
+          <td>{{ busName }}</td>
+          <td>{{ normLeft }}</td>
+        </tr>
+    </div>
+  </body>
 </html>
