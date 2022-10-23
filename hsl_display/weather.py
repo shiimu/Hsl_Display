@@ -13,7 +13,7 @@ def queryWeatherApi(lat, lon):
 
 	Returns:
 
-		response (str): The response from the request
+	response (str): The response from the request
 	'''
 
 	url = "https://api.openweathermap.org/data/2.5/weather?lat="+ lat +"&lon="+ lon +"&appid="+ keys['owm_key'] + ""
@@ -57,3 +57,15 @@ def convertWeather():
 	global temp_in_int
 	converted_temperature = last_temp - 273.15
 	temp_in_int = int(converted_temperature)
+
+
+
+# timeNow = time.strftime('%H %M', time.localtime(time.time()))
+
+# degree_sign = u"\N{DEGREE SIGN}"
+# lat = '60.23787364561019'
+# lon = '25.10560957759351'
+
+# from weather import temp_in_int
+# weatherNow = str(temp_in_int) + "C" + degree_sign
+
