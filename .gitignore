@@ -1,2 +1,1 @@
-venv
-./hsl_display/constants.py
+hsl_display/constants.py
