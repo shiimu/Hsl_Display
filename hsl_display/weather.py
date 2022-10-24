@@ -1,6 +1,9 @@
 import json
 import requests
+import time
+
 from constants import KEYS
+
 
 def query_weather_api(lat, lon):
 	'''
@@ -9,7 +12,7 @@ def query_weather_api(lat, lon):
 
 	lat (str): OWM location identifier.
 	long (str): OWM location identifier.
-	secret['owm'](dict): OMW API key
+	KEYS['OWM_KEY'](dict): OMW API key
 
 	Returns:
 
@@ -57,15 +60,18 @@ def convert_weather():
 	global temp_in_int
 	converted_temperature = last_temp - 273.15
 	temp_in_int = int(converted_temperature)
+	current_weather()	
 
 
+def current_weather():
 
-# timeNow = time.strftime('%H %M', time.localtime(time.time()))
+	degree_sign = u"\N{DEGREE SIGN}"
+	global weather_now
+	weather_now = str(temp_in_int) + "C" + degree_sign
+	return weather_now
 
-# degree_sign = u"\N{DEGREE SIGN}"
-# lat = '60.23787364561019'
-# lon = '25.10560957759351'
 
-# from weather import temp_in_int
-# weatherNow = str(temp_in_int) + "C" + degree_sign
-
+def current_time():
+	global time_now
+	time_now = time.strftime('%H %M', time.localtime(time.time()))
+	return time_now	

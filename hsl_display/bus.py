@@ -118,3 +118,10 @@ def refresh_data():
 		stop_wrap = data_wrap['stop']
 		stop_times_wrap = stop_wrap['stoptimesWithoutPatterns']
 		return data_wrap
+
+
+def bus_complete(number):
+	bus_number(number)
+	bus_name(number)
+	bus_time_left(number)
+	return
