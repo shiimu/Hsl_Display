@@ -2,8 +2,8 @@ from flask import Flask, render_template, json, jsonify
 import time
 import requests
 
-from bus import queryStopApi
-from weather import queryWeatherApi
+from bus import query_stop_api
+from weather import query_weather_api
 
 app = Flask(__name__)
 
@@ -14,8 +14,8 @@ stop_id = 'HSL:1472113'
 lat = '60.23787364561019'
 lon = '25.10560957759351'
 
-queryStopApi(stop_id)
-queryWeatherApi(lat, lon)
+query_stop_api(stop_id)
+query_weather_api(lat, lon)
 
 
 @app.route("/")

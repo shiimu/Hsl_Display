@@ -3,10 +3,10 @@ import json
 import time
 import os
 
-from constants import keys
+from constants import KEYS
 
 
-def queryStopApi(stop_id):
+def query_stop_api(stop_id):
 	'''
 	Sends a post request to Digitransit Api.
 	Parameters:
@@ -38,16 +38,16 @@ def bus_number (number):
 	Parameters:
 
 	number(int): The number of the bus in the API query response
-	bus_number(int): HSL bus number.
+	bus_short_name(int): HSL bus number.
 
 	Returns:
 
 	response (str): The bus number
 	'''
 
-	global bus_number
-	bus_number = stop_times_wrap[number]['trip']['route']['shortName']
-	return bus_number
+	global bus_short_name
+	bus_short_name = stop_times_wrap[number]['trip']['route']['shortName']
+	return bus_short_name
 
 
 def bus_name(number):
@@ -57,16 +57,16 @@ def bus_name(number):
 	Parameters:
 
 	number(int): The number of the bus in the API query response
-	bus_name(str): HSL bus headsign.
+	bus_headsign(str): HSL bus headsign.
 
 	Returns:
 
 	response (str): returns the bus's headsign
 	'''
 
-	global bus_name
-	bus_name = stop_times_wrap[number]['headsign']
-	return bus_name
+	global bus_headsign
+	bus_headsign = stop_times_wrap[number]['headsign']
+	return bus_headsign
 
 
 def bus_time_left(number):

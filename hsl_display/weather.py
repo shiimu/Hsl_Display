@@ -1,8 +1,8 @@
 import json
 import requests
-from constants import keys
+from constants import KEYS
 
-def queryWeatherApi(lat, lon):
+def query_weather_api(lat, lon):
 	'''
 	Sends a post request to OpenWeatheMaps Api.
 	Parameters:
@@ -16,16 +16,16 @@ def queryWeatherApi(lat, lon):
 	response (str): The response from the request
 	'''
 
-	url = "https://api.openweathermap.org/data/2.5/weather?lat="+ lat +"&lon="+ lon +"&appid="+ keys['owm_key'] + ""
+	url = "https://api.openweathermap.org/data/2.5/weather?lat="+ lat +"&lon="+ lon +"&appid="+ KEYS['OWM_KEY'] + ""
 	payload = {"query":'{\n  "weather": {'}
 	headers = {"Content-Type" : "application/json"}
 	response = requests.get(url, headers=headers, data = json.dumps(payload))
 	global dumped_weather
 	dumped_weather = response.json()
-	sortWeather()
+	sort_weather()
 
 
-def sortWeather():
+def sort_weather():
 	'''
 	Sort the weather results to get only the last temperature.
 
@@ -38,10 +38,10 @@ def sortWeather():
 	last_weather = dumped_weather
 	last_main = last_weather['main']
 	last_temp = last_main['temp']
-	convertWeather()
+	convert_weather()
 
 
-def convertWeather():
+def convert_weather():
 	'''
 	Convert the last temperature from Kelvin to Celsius.
 
