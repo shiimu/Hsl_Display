@@ -24,7 +24,7 @@
 
 					{% for row in busComplete %}
 					<tr>
-						<td>{{ row |replace(",", "")|replace("'", "")}}</td>
+						<td>{{ row |replace(",", "")|replace("'", "")|replace("(", "")|replace(")", "") }}</td>
 					</tr>
 					{% endfor %}
 		</div>
