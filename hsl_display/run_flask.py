@@ -11,8 +11,8 @@ app = Flask(__name__)
 
 
 class Bus:
-	def __init__(self, number):
-		self.number = number
+	def __init__(self, info):
+		self.info = info
 
 
 
@@ -26,10 +26,10 @@ def start_serv():
 	busses = []
 	for i in range(0, 5):
 		b1 = Bus(bus_order(i))
-		busses.append(b1.number)
-	return render_template('index.html', timen = current_time(), weathern = current_weather(), busComplete = busses)
+		busses.append(b1.info)
+	try: return render_template('index.html', timen = current_time(), weathern = current_weather(), busComplete = busses)
 
-# except: return render_template('index.html', timen = timeNow, weathern = weatherNow)
+	except: return render_template('index.html', timen = current_time(), weathern = current_weather())
 
 if __name__ == "__main__":
 	app.run(debug=True)

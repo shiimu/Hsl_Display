@@ -18,10 +18,9 @@
 
 	<body>
 		<div align = "center">
+			<div class= "info">LINJA MÄÄRÄNPÄÄ AIKA</div>
 			<table class="c">
 				<tr>
-					<th>LINJA MÄÄRÄNPÄÄ AIKA</th>
-
 					{% for row in busComplete %}
 					<tr>
 						<td>{{ row |replace(",", "")|replace("'", "")|replace("(", "")|replace(")", "") }}</td>

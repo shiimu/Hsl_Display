@@ -22,9 +22,10 @@ def query_stop_api(stop_id):
 	payload = {"query": "{\n  stop(id: \"" + stop_id +
 			"\") {  name   stoptimesWithoutPatterns{realtimeDeparture    serviceDay   headsign trip{route{ shortName}}}}}"}
 	headers = {"Content-Type": "application/json"}
-	response = requests.request(
+	try: response = requests.request(
 		"POST", url, headers=headers, data=json.dumps(payload))
-
+	except requests.exceptions.RequestException as e:
+		raise SystemExit(e)
 	global dumped_data
 	dumped_data = response.json()
 	return dumped_data

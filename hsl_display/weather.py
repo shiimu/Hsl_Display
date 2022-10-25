@@ -22,7 +22,12 @@ def query_weather_api(lat, lon):
 	url = "https://api.openweathermap.org/data/2.5/weather?lat="+ lat +"&lon="+ lon +"&appid="+ KEYS['OWM_KEY'] + ""
 	payload = {"query":'{\n  "weather": {'}
 	headers = {"Content-Type" : "application/json"}
-	response = requests.get(url, headers=headers, data = json.dumps(payload))
+	
+	try:
+		response = requests.get(url, headers=headers, data = json.dumps(payload))
+		response.raise_for_status()
+	except requests.exceptions.RequestException as e:
+		raise SystemExit(e)
 	global dumped_weather
 	dumped_weather = response.json()
 	sort_weather()
