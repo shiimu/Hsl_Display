@@ -1,9 +1,46 @@
 '''
 Execution of the application
 '''
+import os
+
+PATH = './hsl_display/test.py'
+
+KEYS = '''
+KEYS = {
+        "OWM_KEY": "fcc250fd2a7a605c8269de49d1dc6dda",
+        "HSL_KEY": ""
+        }
+'''
+
+
+def create_file():
+    """A dummy docstring."""
+    with open(PATH, "x") as file:
+        file.close()
+
+
+def append_file():
+    '''Dummy doctstring.'''
+    with open(PATH, "a") as file:
+        file.write(KEYS)
+        file.close()
+
+
 print("Checking for constants.py")
-# check here
+# check here.
+try:
+    if os.path.isfile(PATH):
+        print("File exists")
+    else:
+        print("No file there")
+        print("Creating file")
+        create_file()
+except NameError:
+    print("Error")
+
 # if not make one
+
+
 '''
 file = "constants.py"
 if file != constants.py:
@@ -49,9 +86,14 @@ try:
             ]
     if any(pos_answer):
         print("Starting")
+        answer = input("Insert Open Weather Maps Key: ")
+        with open(PATH, "a") as file:
+            file.write('KEYS = {"OWM_KEY": "'+answer+'"}')
+            file.close()
     elif any(neg_answer):
         print("Exiting")
     elif any(res_answer):
         print("Restarting setup")
+
 except NameError:
     print("error")
