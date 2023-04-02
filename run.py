@@ -29,11 +29,29 @@ STOP_ID = {
 print("Ready to start")
 print("Do you want to start?")
 
-answer = input("Option[Y(es)/N(o)]: ")
-
-if answer == "Y":
-    print("Starting")
-elif answer == "N":
-    print("Exiting")
-else:
+try:
+    answer = input("Option[Y(es)/N(o)]: ")
+    pos_answer = [
+            answer == "Y",
+            answer == "y",
+            answer == "Yes",
+            answer == "yes"
+            ]
+    neg_answer = [
+            answer == "N",
+            answer == "n",
+            answer == "No",
+            answer == "no"
+            ]
+    res_answer = [
+            answer == "R",
+            answer == "r"
+            ]
+    if any(pos_answer):
+        print("Starting")
+    elif any(neg_answer):
+        print("Exiting")
+    elif any(res_answer):
+        print("Restarting setup")
+except NameError:
     print("error")
