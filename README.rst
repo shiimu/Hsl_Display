@@ -11,7 +11,6 @@ Hsl_Display
         :alt: Documentation Status
 
 
-     
 Rewrite of https://github.com/shiimu/Bustimes
 -------
 
@@ -20,14 +19,26 @@ Rewrite of https://github.com/shiimu/Bustimes
 * Free software: BSD license
 * Documentation: https://hsl-display.readthedocs.io.
 
+Installation And Setup
+--------
+* Install
+  * git clone https://github.com/shiimu/Hsl_Display.git
+  * cd Hsl_Display
+  * python3 -m run.py
+*
+  * Follow the onscreen instructions
+  * Ctrl + C to quit
+
+
 
 Features
 --------
 
 * TODO
-    
+
     * Simple installation
-    * Set up your own API secrets
+      * Add fluid setup and reconfiguration
+    * Multiple bus stops in a simple way
     * Configure custom bus stops
     * Weather API
     * Low maintenance.
