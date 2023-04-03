@@ -2,7 +2,7 @@
 Hsl_Display
 ===========
 
-.. image:: §https://readthedocs.org/projects/hsl-display/badge/?version=latest
+.. image:: §https://img.shields.io/docsrs/regex?label=Documentation&style=for-the-badge
         :target: https://github.com/shiimu/Hsl_Display/blob/dev/docs/DOCUMENTATION.rst
         :alt: Documentation Status
 
