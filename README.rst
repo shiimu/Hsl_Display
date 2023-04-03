@@ -25,7 +25,7 @@ Installation And Setup
 
     * git clone https://github.com/shiimu/Hsl_Display.git
     * cd Hsl_Display
-    * python3 -m run.py
+    * python3 -m start.py
 
 
 * Setup
@@ -40,7 +40,7 @@ Features
 * TODO
 
     * Simple installation
-      * Add fluid setup and reconfiguration
+        * Add fluid setup and reconfiguration
     * Multiple bus stops in a simple way
     * Configure custom bus stops
     * Weather API
