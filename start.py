@@ -1,29 +1,29 @@
 '''
-Execution of the application
+execution of the application
 '''
 import os
 
-PATH = './hsl_display/test.py'
+PATH = './hsl_display/constants.py'
 
 
 def create_file():
-    """A dummy docstring."""
+    """a dummy docstring."""
     with open(PATH, "x") as file:
         file.close()
     reconfigure_file()
 
 
 def append_file(value):
-    '''Dummy doctstring.'''
+    '''dummy doctstring.'''
     with open(PATH, "a") as file:
         file.write(value)
         file.close()
 
 
 def reconfigure_file():
-    '''Dummy docstring.'''
+    '''dummy docstring.'''
 
-    answer = input("Insert Open Weather Maps Key: ")
+    answer = input("Insert Open Weather Maps key: ")
     append_file('KEYS = {"OWM_KEY": "'+answer+'",')
     answer = input("Insert Lattitude: ")
     append_file('"LAT": "'+answer+'",')
@@ -31,8 +31,14 @@ def reconfigure_file():
     append_file('"LON": "'+answer+'",')
     answer = input("Insert HSL Key: ")
     append_file('"HSL_KEY": "'+answer+'",')
-    answer = input("Insert Bus Stop ID: ")
+    answer = input("Insert Bus Stop id: ")
     append_file('"STOP_1": "'+answer+'"}')
+
+
+def start_flask():
+    '''dummy docstring.'''
+    from hsl_display.run_flask import start_serv
+    start_serv()
 
 
 print("Checking for constants.py")
@@ -72,6 +78,7 @@ try:
             ]
     if any(pos_answer):
         print("Starting")
+        start_flask()
     elif any(neg_answer):
         print("Exiting")
     elif any(res_answer):

@@ -44,6 +44,7 @@ Features
     * Configure custom bus stops
     * Weather API
     * Low maintenance.
+    * Rework readme
 
 Credits
 -------

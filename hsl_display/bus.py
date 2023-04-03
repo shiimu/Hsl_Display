@@ -22,7 +22,7 @@ def query_stop_api(stop_id):
     payload = {"query": "{\n  stop(id: \"" + stop_id +
                                    "\") {  name   stoptimesWithoutPatterns{realtimeDeparture    serviceDay   headsign trip{route{ shortName}}}}}"}
     headers = {"Content-Type": "application/json",
-               "digitransit-subscription-key": "'+ KEYS['HSL_KEY'] +'"}
+               "digitransit-subscription-key": "" + KEYS['HSL_KEY'] + ""}
     try:
         response = requests.request(
             "POST", url, headers=headers, data=json.dumps(payload))
