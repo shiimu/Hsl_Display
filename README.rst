@@ -22,12 +22,15 @@ Rewrite of https://github.com/shiimu/Bustimes
 Installation And Setup
 --------
 * Install
-  * git clone https://github.com/shiimu/Hsl_Display.git
-  * cd Hsl_Display
-  * python3 -m run.py
-*
-  * Follow the onscreen instructions
-  * Ctrl + C to quit
+
+    * git clone https://github.com/shiimu/Hsl_Display.git
+    * cd Hsl_Display
+    * python3 -m run.py
+
+
+* Setup
+    * Follow the onscreen instructions
+    * Ctrl + C to quit
 
 
 
