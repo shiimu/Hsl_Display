@@ -30,6 +30,7 @@ Installation And Setup
 
 * Setup
     * Follow the onscreen instructions
+    * Point your web browser to localhost:5000
     * Ctrl + C to quit
 
 
