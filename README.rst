@@ -3,7 +3,7 @@ Hsl_Display
 ===========
 
 .. image:: §https://readthedocs.org/projects/hsl-display/badge/?version=latest
-        :target: https://github.com/shiimu/Hsl_Display/docs/DOCUMENTATION.rst
+        :target: https://github.com/shiimu/Hsl_Display/blob/dev/docs/DOCUMENTATION.rst
         :alt: Documentation Status
 
 
