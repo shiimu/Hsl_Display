@@ -67,7 +67,7 @@ print("Ready to start")
 print("Do you want to start?")
 
 try:
-    answer = input("Option[Y(es)/N(o)]: ")
+    answer = input("Option[Y(es)/N(o)/R(econfigure)]: ")
     pos_answer = [
             answer == "Y",
             answer == "y",
@@ -86,9 +86,26 @@ try:
             ]
     if any(pos_answer):
         print("Starting")
+        # Make this into an object
         answer = input("Insert Open Weather Maps Key: ")
         with open(PATH, "a") as file:
-            file.write('KEYS = {"OWM_KEY": "'+answer+'"}')
+            file.write('KEYS = {"OWM_KEY": "'+answer+'",')
+            file.close()
+        answer = input("Insert Lattitude: ")
+        with open(PATH, "a") as file:
+            file.write('"LAT": "'+answer+'",')
+            file.close()
+        answer = input("Insert Longitude: ")
+        with open(PATH, "a") as file:
+            file.write('"LON": "'+answer+'",')
+            file.close()
+        answer = input("Insert HSL Key: ")
+        with open(PATH, "a") as file:
+            file.write('"HSL_KEY": "'+answer+'",')
+            file.close()
+        answer = input("Insert Bus Stop ID: ")
+        with open(PATH, "a") as file:
+            file.write('"STOP_1": "'+answer+'"}')
             file.close()
     elif any(neg_answer):
         print("Exiting")
