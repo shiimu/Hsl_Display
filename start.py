@@ -2,6 +2,7 @@
 execution of the application
 '''
 import os
+import subprocess
 
 PATH = './hsl_display/constants.py'
 
@@ -33,12 +34,12 @@ def reconfigure_file():
     append_file('"HSL_KEY": "'+answer+'",')
     answer = input("Insert Bus Stop id: ")
     append_file('"STOP_1": "'+answer+'"}')
+    start_flask()
 
 
 def start_flask():
     '''dummy docstring.'''
-    from hsl_display.run_flask import start_serv
-    start_serv()
+    subprocess.run(["python3", "-m", "./hsl_display/run_flask.py"])
 
 
 print("Checking for constants.py")
