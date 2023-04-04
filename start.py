@@ -40,6 +40,14 @@ def reconfigure_file():
 def start_flask():
     '''dummy docstring.'''
     subprocess.run(["python3", "-m", "./hsl_display/run_flask.py"])
+'''
+
+There are too much too long anwers in a foreign language. So I'll try to make it short.
+
+If you write from . import module, opposite to what you think, module will not be imported from current directory, but from the top level of your package! If you run .py file as a script, it simply doesn't know where the top level is and thus refuses to work.
+
+If you start it like this py -m package.module from the directory above package, then python knows where the top level is. That's very similar to java: java -cp bin_directory package.class
+'''
 
 
 print("Checking for constants.py")
