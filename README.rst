@@ -2,35 +2,49 @@
 Hsl_Display
 ===========
 
-
-.. image:: https://img.shields.io/travis/shiimu/hsl_display.svg
-        :target: https://travis-ci.com/shiimu/hsl_display
-
-.. image:: https://readthedocs.org/projects/hsl-display/badge/?version=latest
-        :target: https://hsl-display.readthedocs.io/en/latest/?version=latest
+.. image:: https://img.shields.io/docsrs/regex?label=Documentation&style=for-the-badge
+        :target: https://github.com/shiimu/Hsl_Display/blob/dev/docs/DOCUMENTATION.rst
         :alt: Documentation Status
 
 
-     
 Rewrite of https://github.com/shiimu/Bustimes
 -------
 
 
 
 * Free software: BSD license
-* Documentation: https://hsl-display.readthedocs.io.
+
+* Simple web app displaying the bus times of the bus stop of your choosing
+
+
+Installation And Setup
+--------
+* Install
+
+    * git clone https://github.com/shiimu/Hsl_Display.git
+    * cd Hsl_Display
+    * python3 -m start.py
+
+
+* Setup
+    * Follow the onscreen instructions
+    * Point your web browser to localhost:5000
+    * Ctrl + C to quit
+
 
 
 Features
 --------
 
 * TODO
-    
+
     * Simple installation
-    * Set up your own API secrets
+        * Add fluid setup and reconfiguration
+    * Multiple bus stops in a simple way
     * Configure custom bus stops
     * Weather API
     * Low maintenance.
+    * Rework readme
 
 Credits
 -------

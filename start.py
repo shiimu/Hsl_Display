@@ -1,29 +1,45 @@
 '''
-Execution of the application
+execution of the application
 '''
 import os
+import subprocess
 
-PATH = './hsl_display/test.py'
-
-KEYS = '''
-KEYS = {
-        "OWM_KEY": "fcc250fd2a7a605c8269de49d1dc6dda",
-        "HSL_KEY": ""
-        }
-'''
+PATH = './hsl_display/constants.py'
 
 
 def create_file():
-    """A dummy docstring."""
+    """a dummy docstring."""
     with open(PATH, "x") as file:
         file.close()
+    reconfigure_file()
 
 
-def append_file():
-    '''Dummy doctstring.'''
+def append_file(value):
+    '''dummy doctstring.'''
     with open(PATH, "a") as file:
-        file.write(KEYS)
+        file.write(value)
         file.close()
+
+
+def reconfigure_file():
+    '''dummy docstring.'''
+
+    answer = input("Insert Open Weather Maps key: ")
+    append_file('KEYS = {"OWM_KEY": "'+answer+'",')
+    answer = input("Insert Lattitude: ")
+    append_file('"LAT": "'+answer+'",')
+    answer = input("Insert Longitude: ")
+    append_file('"LON": "'+answer+'",')
+    answer = input("Insert HSL Key: ")
+    append_file('"HSL_KEY": "'+answer+'",')
+    answer = input("Insert Bus Stop id: ")
+    append_file('"STOP_1": "'+answer+'"}')
+    start_flask()
+
+
+def start_flask():
+    '''dummy docstring.'''
+    subprocess.run(["python3", "-m", "./hsl_display/run_flask.py"])
 
 
 print("Checking for constants.py")
@@ -40,34 +56,11 @@ except NameError:
 
 # if not make one
 
-
-'''
-file = "constants.py"
-if file != constants.py:
-    touch constants.py with:
-        #API Keys
-KEYS = {
-        "OWM_KEY": "fcc250fd2a7a605c8269de49d1dc6dda",
-        "HSL_KEY": ""
-        }
-COORDS = {
-        "LAT": "60.23787",
-        "LON": "25.10560"
-        }
-STOP_ID = {
-        "STOP_1": "HSL:1472113"
-        }
-'''
-# ask if want owm
-# ask for long
-# ask for lat
-# ask if want hslkey
-# ask for stop id
 print("Ready to start")
 print("Do you want to start?")
 
 try:
-    answer = input("Option[Y(es)/N(o)]: ")
+    answer = input("Option[Y(es)/N(o)/R(econfigure)]: ")
     pos_answer = [
             answer == "Y",
             answer == "y",
@@ -86,14 +79,11 @@ try:
             ]
     if any(pos_answer):
         print("Starting")
-        answer = input("Insert Open Weather Maps Key: ")
-        with open(PATH, "a") as file:
-            file.write('KEYS = {"OWM_KEY": "'+answer+'"}')
-            file.close()
+        start_flask()
     elif any(neg_answer):
         print("Exiting")
     elif any(res_answer):
         print("Restarting setup")
-
+        reconfigure_file()
 except NameError:
     print("error")
