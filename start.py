@@ -1,5 +1,5 @@
 '''
-execution of the application
+Execution of the application
 '''
 import os
 import subprocess
@@ -8,21 +8,22 @@ PATH = './hsl_display/constants.py'
 
 
 def create_file():
-    """a dummy docstring."""
+    '''Create constants.py'''
     with open(PATH, "x") as file:
         file.close()
     reconfigure_file()
 
 
 def append_file(value):
-    '''dummy doctstring.'''
+    '''Append to the end of constants.py'''
     with open(PATH, "a") as file:
         file.write(value)
         file.close()
 
 
 def reconfigure_file():
-    '''dummy docstring.'''
+    '''Reconfigure the constants.py file
+    from the start'''
 
     answer = input("Insert Open Weather Maps key: ")
     append_file('KEYS = {"OWM_KEY": "'+answer+'",')
@@ -38,12 +39,13 @@ def reconfigure_file():
 
 
 def start_flask():
-    '''dummy docstring.'''
-    subprocess.run(["python3", "-m", "./hsl_display/run_flask.py"])
+    '''Start run_flask.py in ./hsl_display/ subfolder'''
+    subprocess.run(["python3", "./hsl_display/run_flask.py"])
 
 
+'''Check if constants.py exists
+    if not create the file'''
 print("Checking for constants.py")
-# check here.
 try:
     if os.path.isfile(PATH):
         print("File exists")
@@ -54,7 +56,6 @@ try:
 except NameError:
     print("Error")
 
-# if not make one
 
 print("Ready to start")
 print("Do you want to start?")
